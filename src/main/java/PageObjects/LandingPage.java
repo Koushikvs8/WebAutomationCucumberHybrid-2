@@ -1,7 +1,10 @@
 package PageObjects;
 
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -45,28 +48,40 @@ public class LandingPage {
 	@FindBy(xpath = "//div[@class='inventory_list']//div[@class='inventory_item']")
      List<WebElement> productItems;
 	
-	@FindBy(xpath = "//div[@class='inventory_list']//div[@class='inventory_item_img']")
-	WebElement prodImage;
 	
 	@FindBy(xpath = "//div[@class='inventory_list']//div[@class='inventory_item_img']")
 	WebElement prodImge;
 	
-	@FindBy(xpath = "//div[@class='inventory_item_label']//a[@id='item_"+0+"title_link']")// 0 is element changes with changing value of zero
+	@FindBy(xpath = "//div[@class='inventory_item_label']//a//div[text()=\"Sauce Labs Backpack\"]']")// 0 is element changes with changing value of zero
 	WebElement prodName;
+	
+	By prodNames = By.xpath( "//div[@class='inventory_item_label']//a//div[text()=\"String\"]']");//String is replaced by the product name in user logic
 	
 	@FindBy(xpath = "//div[@class='inventory_list']//div[@class='inventory_item'][1]")// 1 is element changes with changing value of zero
 	WebElement price;
 	
-	@FindBy(xpath = "//button[@class='btn btn_primary btn_small btn_inventory ']")
-	WebElement addCart;
+
 	
-	@FindBy(xpath = "//div[@class='inventory_list']//div[@class='inventory_item']//button") // [n] generalized xpath for ADD to cart
+	@FindBy(xpath = "//div[@class='inventory_item']//div[2]//a/div[text()='Sauce Labs Bike Light']/ancestor::div[@class='inventory_item']//button[text()='Add to cart']") // [n] generalized xpath for ADD to cart
 	List<WebElement> addCarts;
 	
-	public void clickOnMenu()
+	public void clickOnMenu() 
 	{
 		webelements.clickInput(BtnMenu, 10);
+		System.out.println("clicked");
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
+	public void CloseMenu() 
+	{
+		webelements.clickInput(BtnCrossMenu, 10);
+		
+	}
+	
 	
 	public Boolean LandingPageTitleDisplay()
 	{
@@ -77,4 +92,56 @@ public class LandingPage {
 	}
 	
 	
+	public Boolean menuOptionsDisplay(List<String> list)
+	{   boolean status=false;
+		List<String> list1=new ArrayList<String>(list);
+		try {
+			Thread.sleep(2000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println(list1);
+		for (String string : list1) {
+		
+			if(string.equals("All items"))
+			{
+				status=webelements.displayed(allitemlink, 10);
+				
+			}
+			else if (string.equals("About")) {
+				status=webelements.displayed(aboutlink, 10);
+			}
+            else if (string.equals("Logout")) {
+            	status=webelements.displayed(BtnLogout, 10);
+			}
+              else if (string.equals("Reset app state")) {
+            	  status= webelements.displayed(resetLink, 10);
+			}
+         	
+		}
+	   
+		System.out.println("displayed");
+		System.out.println(status);
+		return status;	
+	}
+	///////////
+	
+	public Boolean productTitleDisplay()
+	{
+		boolean status= webelements.displayed(titleproduct, 10);
+		return status;
+	}
+	
+	//////////////////
+	public void clickOnProducts(String product) 
+	{   
+	    	  webelements.clickInput(driver.findElement(By.xpath("//div[@class='inventory_item']//div[2]//a/div[text()='"+product+"']")), 10);
+	    	  
+		
+
+
+	}
+	
+///////////////
 }

@@ -16,7 +16,8 @@ public class UtilityElements {
 	{
 		this.driver=driver;
 	}
-
+ 
+	
 	
 	
 	public void textInput(WebElement element , int seconds , String text )
@@ -52,7 +53,7 @@ public class UtilityElements {
 		WebDriverWait wait= new WebDriverWait(driver, Duration.ofSeconds(seconds));
 		  waitedelement=wait.until(ExpectedConditions.elementToBeClickable(element));
 	} catch (Exception e) {
-		System.out.println("wainting explicity 10 secound");
+		System.out.println("waiting explicity 10 secound");
 		e.printStackTrace();
 	}
 	

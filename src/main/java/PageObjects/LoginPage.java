@@ -28,6 +28,8 @@ public class LoginPage {
 
 	@FindBy(xpath = "//input[@id='login-button']")
 	WebElement btnLogin;
+	@FindBy(xpath = "//h3[contains(text(), \"Epic sadface:\")]")
+	WebElement WarningMessege;
 	
 	public void LoginCredentials(String userName ,String password) throws InterruptedException 
 	{
@@ -37,14 +39,20 @@ public class LoginPage {
 		
 		
 	}
-	public LandingPage clickonLoginButton()
+
+	
+	public boolean inavalidCredentailsMsg()
+	{
+		
+		utilityelements.displayed(WarningMessege, 10);
+		return true;
+	}
+	public LandingPage clickonLoginButton( )
 	{   
 		utilityelements.clickInput(btnLogin, 10);
 		System.out.println("clicked");
 		return new LandingPage(driver);
 	}
-	
-	
 	
 	
 }
