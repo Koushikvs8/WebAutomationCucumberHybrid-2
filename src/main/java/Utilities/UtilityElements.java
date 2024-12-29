@@ -42,6 +42,12 @@ public class UtilityElements {
 		 return waitedelement.isDisplayed();
 		  
 	}
+	public String getTextfromElement(WebElement element , int seconds  )
+	{
+		  WebElement waitedelement=waitTillElementToBeVisible(element, seconds) ;
+		 return waitedelement.getText();
+		  
+	}
 	
 	
 	

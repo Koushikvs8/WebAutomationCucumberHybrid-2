@@ -60,7 +60,11 @@ public class LandingPage {
 	@FindBy(xpath = "//div[@class='inventory_list']//div[@class='inventory_item'][1]")// 1 is element changes with changing value of zero
 	WebElement price;
 	
-
+	@FindBy(xpath = "//a[@class='shopping_cart_link']")
+	WebElement shoppingCartLink;
+	
+	@FindBy(xpath = "//span[@class='shopping_cart_badge']")
+	WebElement shoppingCartCount;
 	
 	@FindBy(xpath = "//div[@class='inventory_item']//div[2]//a/div[text()='Sauce Labs Bike Light']/ancestor::div[@class='inventory_item']//button[text()='Add to cart']") // [n] generalized xpath for ADD to cart
 	List<WebElement> addCarts;
@@ -141,6 +145,20 @@ public class LandingPage {
 		
 
 
+	}
+	
+	public ProductInfPage shoppingCartLink()
+	{
+		webelements.clickInput(shoppingCartLink, 10);
+		
+		return  new ProductInfPage(driver);
+	}
+	
+	public String shoppingCartCount()
+	{
+		
+		return webelements.getTextfromElement(shoppingCartCount, 10);
+		
 	}
 	
 ///////////////
