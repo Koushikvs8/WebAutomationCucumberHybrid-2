@@ -24,11 +24,10 @@ public void setup()
 }
 	
 
-
 @After
 public void tearDown() 
 { if(driver!=null)
-    Testbase.getDriver().quit(); // Quit the driver after each scenario
+   Testbase.getDriver().quit(); // Quit the driver after each scenario
 }
 	
 
