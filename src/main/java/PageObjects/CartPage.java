@@ -25,7 +25,9 @@ public class CartPage {
 	WebElement checkOutBtn;
 	
 	
-	@FindBy(xpath = "//button[@id='checkout']")
-	WebElement checkOutBtfn;
-	//div[@class="cart_item"]/ancestor::div[@class="cart_list"]//div[@class="item_pricebar"]//button
+	@FindBy(xpath = "//div[@class=\"cart_item\"]/ancestor::div[@class=\"cart_list\"]//div[@class=\"item_pricebar\"]//button")
+	WebElement cartProducts;
+	
+	
+
 }

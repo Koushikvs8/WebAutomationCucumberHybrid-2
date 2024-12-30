@@ -25,8 +25,11 @@ public void setup()
 	
 
 @After
-public void tearDown() 
-{ if(driver!=null)
+public void tearDown() throws InterruptedException 
+{ 
+	
+	
+	if(driver!=null)
    Testbase.getDriver().quit(); // Quit the driver after each scenario
 }
 	

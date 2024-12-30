@@ -8,7 +8,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions (features = "src\\test\\java\\features" ,
 glue = "Stepdefination", 
-tags = "@E2E",
+tags = "@LandingPage",
 monochrome=true,
 plugin= {"pretty","html:target/cucumber.html", 
 		"json:target/cucumber.json", 

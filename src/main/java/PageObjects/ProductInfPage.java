@@ -23,6 +23,13 @@ public class ProductInfPage {
 	WebElement addCart;
 
 	
+
+	@FindBy(xpath = "//button[@id='remove']")
+	WebElement remove;
+	
+	
+	
+
 	@FindBy(xpath = "//button[@id='back-to-products']")
 	WebElement backtoProductsButton; 
 	
@@ -30,14 +37,30 @@ public class ProductInfPage {
 	{
 		
 		utilityelements.clickInput(addCart, 10);
-
+         
 	}
    
 	
-	public void backToLandingPage() 
+	public LandingPage backToLandingPage() 
 	{
 		
 		utilityelements.clickInput(backtoProductsButton, 10);
-
+       return new LandingPage(driver);
 	}
+	
+	public Boolean backToLandingPageDisplay() 
+	{
+		
+		Boolean status=utilityelements.displayed(backtoProductsButton, 10);
+       return status;
+	}
+	public Boolean removeButtoneDisplay() 
+	{
+		
+		Boolean status=utilityelements.displayed(remove, 10);
+       return status;
+	}
+	
+	
+	
 }

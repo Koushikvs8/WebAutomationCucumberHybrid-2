@@ -15,26 +15,27 @@ Feature: Landing page Functinality
     | About |
     | Logout |
     |Reset app state  |
-   And page title should be "String"
+   And page title should be "Swag Labs"
     
- @Addcart
+@LandingPage
   Scenario Outline: select the product to Check its Details
   
    Given user is on Landing page
    When click on the given <products> 
+   Then user should navigate to product information page
    And click on addcart button
    Then user should navigate to product information page and AddCard button as Remove
    Examples:
    |products|
   |Sauce Labs Onesie|
-   |Sauce Labs Bike Ligh|
+   |Sauce Labs Bike Light|
    |Sauce Labs Bolt T-Shirt|
    |Sauce Labs Backpack|
    |Sauce Labs Fleece Jacket|
-   |Test.allTheThings() T-Shirt (Red)|
+   |Test.allTheThings() T-Shirt (Red|
    
- 
-   
+
+    
    
    
 

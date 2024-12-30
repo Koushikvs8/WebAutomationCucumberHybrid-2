@@ -54,20 +54,48 @@ public class Landingpage {
 		  Assert.assertTrue(status);
 	}
 
-
+  //this method is for selecting the product for data sets(running same scenario for multiple products)
 	@When("^click on the given (.+)$")
 	public void click_on_the_product(String product) {
 		 
 		  landingpage.clickOnProducts(product) ;
-		  productinfo =new ProductInfPage(driver);
+		  
 		 
 	}
-	@When("click on addcart button")
-	public void click_on_addcart_button() {
-		productinfo.clickOnAddCart();
-		 productinfo.backToLandingPage();
+	
+	@Then("user should navigate to product information page")
+	public void user_should_navigate_to_product_information_page() {
+		productinfo=new ProductInfPage(driver);
+		boolean status= productinfo.backToLandingPageDisplay();
+		Assert.assertTrue(status);
+	
+	}
+
+ @When("click on addcart button")
+ public void click_on_addcart_button() {
+	 
+	productinfo.clickOnAddCart();
+	 
+ }
+ 
+ @Then("user should navigate to product information page and AddCard button should be Remove")
+	public void user_should_navigate_to_product_information_page_and_add_card_button_as_remove() {
+	 boolean status= productinfo.removeButtoneDisplay();
+	    productinfo.backToLandingPage();
+		Assert.assertTrue(status);
+	
 	}
 	
+	  //this method is for selecting the product 
+		
+		@When("click on the product")
+		public void click_on_the_product(io.cucumber.datatable.DataTable dataTable) {
+			List<String> elements=dataTable.asList(String.class);
+			  // landingpage.clickOnProducts(elements);
+		   
 	
 	
+	
+		}
+		
 }

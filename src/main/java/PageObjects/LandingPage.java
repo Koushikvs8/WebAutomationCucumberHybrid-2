@@ -74,7 +74,7 @@ public class LandingPage {
 		webelements.clickInput(BtnMenu, 10);
 		System.out.println("clicked");
 		try {
-			Thread.sleep(1000);
+			Thread.sleep(300);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -100,7 +100,7 @@ public class LandingPage {
 	{   boolean status=false;
 		List<String> list1=new ArrayList<String>(list);
 		try {
-			Thread.sleep(2000);
+			Thread.sleep(200);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -138,20 +138,28 @@ public class LandingPage {
 	}
 	
 	//////////////////
-	public void clickOnProducts(String product) 
+	public ProductInfPage clickOnProducts(String product) 
 	{   
 	    	  webelements.clickInput(driver.findElement(By.xpath("//div[@class='inventory_item']//div[2]//a/div[text()='"+product+"']")), 10);
 	    	  
-		
+		return new ProductInfPage(driver);
 
 
 	}
+	//public ProductInfPage clickOnProducts(List<String> product) 
+	//{   
+	 //   	  webelements.clickInput(driver.findElement(By.xpath("//div[@class='inventory_item']//div[2]//a/div[text()='"+product+"']")), 10);
+	  //  	  
+	//	return new ProductInfPage(driver);
+
+
+	//}
 	
-	public ProductInfPage shoppingCartLink()
+	public CartPage shoppingCartLink()
 	{
 		webelements.clickInput(shoppingCartLink, 10);
 		
-		return  new ProductInfPage(driver);
+		return  new CartPage(driver);
 	}
 	
 	public String shoppingCartCount()
