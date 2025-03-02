@@ -32,7 +32,7 @@ Feature: Landing page Functinality
    |Sauce Labs Bolt T-Shirt|
    |Sauce Labs Backpack|
    |Sauce Labs Fleece Jacket|
-   |Test.allTheThings() T-Shirt (Red|
+   |Test.allTheThings() T-Shirt (Red)|
    
 
     

@@ -14,13 +14,13 @@ import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 
-public class Hooks {
+public class Hooks extends Testbase {
 WebDriver driver;
 
 @Before
-public void setup() 
+public void setup() throws InterruptedException 
 {
-	Testbase.webdriverManeger();
+	webdriverManeger();
 }
 	
 
@@ -29,8 +29,12 @@ public void tearDown() throws InterruptedException
 { 
 	
 	
-	if(driver!=null)
-   Testbase.getDriver().quit(); // Quit the driver after each scenario
+	if(getDriver()!=null)
+	{
+   Testbase.getDriver().quit(); 
+	}// Quit the driver after each scenario
+	threadLocalDriver.remove();
+	Thread.sleep(1000);
 }
 	
 

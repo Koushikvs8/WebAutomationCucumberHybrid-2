@@ -19,7 +19,7 @@ plugin= {"pretty","html:target/cucumber.html",
 public class TestRunnerr extends AbstractTestNGCucumberTests {
 
 	   @Override
-	    @DataProvider(parallel =false)
+	    @DataProvider(parallel =true)
 	   public  Object[][] scenarios()
 	   {
 		   return super.scenarios();

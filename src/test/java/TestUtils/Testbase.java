@@ -16,10 +16,11 @@ import java.time.Duration;
 public  class Testbase {
   public static  WebDriver driver;
   public static Properties prop; 
-  private static ThreadLocal<WebDriver> threadLocalDriver = new ThreadLocal<>();
- public static WebDriver webdriverManeger() 
+  protected static ThreadLocal<WebDriver> threadLocalDriver = new ThreadLocal<>();
+ public static WebDriver webdriverManeger() throws InterruptedException 
   {
 	     // logic for reading the property
+	 Thread.sleep(1000);
 	  prop= new Properties();
 	  FileInputStream file = null;
 	try {
@@ -40,33 +41,34 @@ public  class Testbase {
 	  
 	 if(driver==null)
 	 {
+		 
 		 if(browser.equalsIgnoreCase("chrome")) {
-			 driver=new ChromeDriver(); 
+			 threadLocalDriver.set(new ChromeDriver());
 		 }
 		 else if (browser.equalsIgnoreCase("FirFox")) {
-			 driver=new FirefoxDriver();
+			 threadLocalDriver.set(new FirefoxDriver());
 		}
 		 else if (browser.equalsIgnoreCase("Edge")) {
-			 driver=new EdgeDriver();
+			 threadLocalDriver.set(new EdgeDriver());
 			}
 	 }
 	 
 	 
 	 
     
-     driver.get(url);
-     driver.manage().deleteAllCookies();
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+	 threadLocalDriver.get().get(url);;
+	 threadLocalDriver.get().manage().deleteAllCookies();
+	 threadLocalDriver.get().manage().window().maximize();
+	 threadLocalDriver.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	  
-	   return driver;
+	   return threadLocalDriver.get();
 	  
   }
   
   
   public static WebDriver  getDriver()
   {
-	  return driver;
+	  return threadLocalDriver.get();
   }
   
 	
