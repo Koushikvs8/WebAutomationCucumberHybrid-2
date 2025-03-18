@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>7/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>5/2/0</td>
 </tr><tr>
-<td>Started on:</td><td>Sat Mar 01 19:13:22 IST 2025</td>
+<td>Started on:</td><td>Tue Mar 04 13:56:51 IST 2025</td>
 </tr>
-<tr><td>Total time:</td><td>19 seconds (19510 ms)</td>
+<tr><td>Total time:</td><td>113 seconds (113978 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,46 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='Runner.TestRunnerr.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunnerr<br>Test method: Runs Cucumber Scenarios<br>Parameters: "select the product to Check its Details", "Optional[Landing page Functinality]"</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebElement.clear()&quot; because &quot;waitedelement&quot; is null
+	at Utilities.UtilityElements.textInput(UtilityElements.java:26)
+	at PageObjects.LoginPage.LoginCredentials(LoginPage.java:36)
+	at Stepdefination.Login.user_enter_the_username_and_password(Login.java:33)
+	at ✽.user enter the username &quot;standard_user&quot; and password &quot;secret_sauce&quot;(file:///C:/Usereclipsonly/Koushikworkspace1/CucumberHybrid-Saucelab/src/test/java/features/LandingPage.feature:6)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1846435308", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1846435308'><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebElement.clear()&quot; because &quot;waitedelement&quot; is null
+	at Utilities.UtilityElements.textInput(UtilityElements.java:26)
+	at PageObjects.LoginPage.LoginCredentials(LoginPage.java:36)
+	at Stepdefination.Login.user_enter_the_username_and_password(Login.java:33)
+	at ✽.user enter the username &quot;standard_user&quot; and password &quot;secret_sauce&quot;(file:///C:/Usereclipsonly/Koushikworkspace1/CucumberHybrid-Saucelab/src/test/java/features/LandingPage.feature:6)
+</pre></div></td>
+<td>31</td>
+<td>Runner.TestRunnerr@6d4d66d2</td></tr>
+<tr>
+<td title='Runner.TestRunnerr.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunnerr<br>Test method: Runs Cucumber Scenarios<br>Parameters: "user can see menu and its options", "Optional[Landing page Functinality]"</td>
+<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebElement.clear()&quot; because &quot;waitedelement&quot; is null
+	at Utilities.UtilityElements.textInput(UtilityElements.java:26)
+	at PageObjects.LoginPage.LoginCredentials(LoginPage.java:36)
+	at Stepdefination.Login.user_enter_the_username_and_password(Login.java:33)
+	at ✽.user enter the username &quot;standard_user&quot; and password &quot;secret_sauce&quot;(file:///C:/Usereclipsonly/Koushikworkspace1/CucumberHybrid-Saucelab/src/test/java/features/LandingPage.feature:6)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1595362770", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1595362770'><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebElement.clear()&quot; because &quot;waitedelement&quot; is null
+	at Utilities.UtilityElements.textInput(UtilityElements.java:26)
+	at PageObjects.LoginPage.LoginCredentials(LoginPage.java:36)
+	at Stepdefination.Login.user_enter_the_username_and_password(Login.java:33)
+	at ✽.user enter the username &quot;standard_user&quot; and password &quot;secret_sauce&quot;(file:///C:/Usereclipsonly/Koushikworkspace1/CucumberHybrid-Saucelab/src/test/java/features/LandingPage.feature:6)
+</pre></div></td>
+<td>44</td>
+<td>Runner.TestRunnerr@6d4d66d2</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -77,37 +117,27 @@ function toggleAllBoxes() {
 <tr>
 <td title='Runner.TestRunnerr.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunnerr<br>Test method: Runs Cucumber Scenarios<br>Parameters: "select the product to Check its Details", "Optional[Landing page Functinality]"</td>
 <td></td>
-<td>17</td>
+<td>7</td>
 <td>Runner.TestRunnerr@6d4d66d2</td></tr>
 <tr>
 <td title='Runner.TestRunnerr.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunnerr<br>Test method: Runs Cucumber Scenarios<br>Parameters: "select the product to Check its Details", "Optional[Landing page Functinality]"</td>
 <td></td>
-<td>17</td>
-<td>Runner.TestRunnerr@6d4d66d2</td></tr>
-<tr>
-<td title='Runner.TestRunnerr.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunnerr<br>Test method: Runs Cucumber Scenarios<br>Parameters: "user can see menu and its options", "Optional[Landing page Functinality]"</td>
-<td></td>
-<td>17</td>
+<td>7</td>
 <td>Runner.TestRunnerr@6d4d66d2</td></tr>
 <tr>
 <td title='Runner.TestRunnerr.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunnerr<br>Test method: Runs Cucumber Scenarios<br>Parameters: "select the product to Check its Details", "Optional[Landing page Functinality]"</td>
 <td></td>
-<td>17</td>
+<td>6</td>
 <td>Runner.TestRunnerr@6d4d66d2</td></tr>
 <tr>
 <td title='Runner.TestRunnerr.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunnerr<br>Test method: Runs Cucumber Scenarios<br>Parameters: "select the product to Check its Details", "Optional[Landing page Functinality]"</td>
 <td></td>
-<td>16</td>
+<td>6</td>
 <td>Runner.TestRunnerr@6d4d66d2</td></tr>
 <tr>
 <td title='Runner.TestRunnerr.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunnerr<br>Test method: Runs Cucumber Scenarios<br>Parameters: "select the product to Check its Details", "Optional[Landing page Functinality]"</td>
 <td></td>
-<td>17</td>
-<td>Runner.TestRunnerr@6d4d66d2</td></tr>
-<tr>
-<td title='Runner.TestRunnerr.runScenario()'><b>runScenario</b><br>Test class: Runner.TestRunnerr<br>Test method: Runs Cucumber Scenarios<br>Parameters: "select the product to Check its Details", "Optional[Landing page Functinality]"</td>
-<td></td>
-<td>16</td>
+<td>7</td>
 <td>Runner.TestRunnerr@6d4d66d2</td></tr>
 </table><p>
 </body>
